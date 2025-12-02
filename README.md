@@ -19,7 +19,7 @@
 				|			|      o 		/
 				|			| Extructurdas 	\ Registros
 				|			|				|
- 	Estrucura	|			\				| Archivos
+ 	Estructura	|			\				| Archivos
 	   de		|							\
 	  Datos		|
  				|			/

@@ -12,7 +12,7 @@ void clearPantalla();
 
 int main(){
 	clearPantalla();
-	int indice = 30;
+	int indice = 29;
 	int arreglo[indice];
 
 	cout << "-----------Carga de valores enteros---------" << endl;	

@@ -4,26 +4,34 @@
 using namespace std;
 
 //prototipo
-void cargarArreglo(int arreglo[],int);
-void mostrarArregloRecursivoDesendente(int arreglo[],int);
-void mostrarArregloRecursivoAsendente(int arreglo[],int);
+void cargarArreglo(char arreglo[],int);
+void mostrarArregloRecursivoDesendente(char arreglo[],int);
+void mostrarArregloRecursivoAsendente(char arreglo[],int);
 void clearPantalla();
 
 
 int main(){
 	clearPantalla();
-	int indice = 29;
-	int arreglo[indice];
+	int indice = 30;
+	char arreglo[indice];
 
 	cout << "-----------Carga de valores enteros---------" << endl;	
 	cargarArreglo(arreglo,indice);
+
+	//limpia pantalla
 	clearPantalla();
 
-	cout << "-----Datos mostrados de manera recursiva (posicion desendente)----" << endl;	
-	mostrarArregloRecursivoDesendente(arreglo,indice);
-
-	cout << "-----Datos mostrados de manera recursiva (posicion asendente)----" << endl;	
+	
+	cout << "-----Elementos del vector----" << endl;	
 	mostrarArregloRecursivoAsendente(arreglo,indice);
+	cout << endl;
+	cout << endl;
+
+
+	cout << "-----Elementos del vector de manera inversa----" << endl;	
+	mostrarArregloRecursivoDesendente(arreglo,indice);
+	cout << endl;
+	cout << endl;
 
 	//pantalla en espera
 	system("pause");
@@ -32,19 +40,19 @@ int main(){
 }
 
 //definicion de funcion
-void cargarArreglo(int arreglo[], int i){
+void cargarArreglo(char arreglo[], int i){
 	for(int j = 0;j <= i; j++){
-		cout << "ingrese valor entero: " << endl;	
+		cout << "ingrese caracter: " << endl;	
 		cin >> arreglo[j];
 	}
 
 }
 
-void mostrarArregloRecursivoDesendente(int arreglo[],int i){
+void mostrarArregloRecursivoDesendente(char arreglo[],int i){
 	if( i == 0){
-		cout << " pocision " << i << " el valor es : " << arreglo[i] << endl;
+		cout << arreglo[i] << " ";
 	}else{
-		cout << " pocision " << i << " el valor es : " << arreglo[i] << endl;
+		cout << arreglo[i] << " ";
 		i = i - 1;
 		//llamada de funcion recursiva
 		mostrarArregloRecursivoDesendente(arreglo,i);
@@ -53,13 +61,13 @@ void mostrarArregloRecursivoDesendente(int arreglo[],int i){
 
 }
 
-void mostrarArregloRecursivoAsendente(int arreglo[],int i){
+void mostrarArregloRecursivoAsendente(char arreglo[],int i){
 	if(i == 0){
-		cout << " pocision " << i << " el valor es : " << arreglo[i] << endl;
+		cout << arreglo[i] << " ";
 	}else{
 		i = i - 1;
 		mostrarArregloRecursivoAsendente(arreglo,i);
-		cout << " pocision " << i+1 << " el valor es : " << arreglo[i+1] << endl;
+		cout << arreglo[i+1] << " ";
 		
 	}
 

@@ -8,11 +8,12 @@ struct nodo{
        nodo *sgte;
 };
 
+//prototipo
 nodo *crearNodo(int num);
 void cargarDatos(int &num);
-void insertarLifo(nodo **lista, nodo *nuevo);
+void insertarInicio(nodo **lista, nodo *nuevo);
 void mostrar(nodo *lista);
-int retirarLifo(nodo **lista);
+int retirarInicio(nodo **lista);
 
 
 int main()
@@ -24,8 +25,8 @@ int main()
   {
       cout << "MENU" << endl;
       cout << "1-MOSTRAR DATOS" << endl;
-      cout << "2-AGREGAR DATOS (METODO LIFO)" << endl;
-      cout << "3-ELIMINAR DATOS (METODO LIFO)" << endl;
+      cout << "2-AGREGAR DATOS INICIO" << endl;
+      cout << "3-ELIMINAR DATOS INICIO" << endl;
       cout << "4-SALIR" << endl;
       cout << "SELECCIONE OPCION: ";
       cin >> op;
@@ -36,13 +37,10 @@ int main()
         break;
         case 2:
           cargarDatos(n);
-          insertarLifo(&lista,crearNodo(n)); 
+          insertarInicio(&lista,crearNodo(n)); 
         break;
         case 3:
-          if (retirarLifo(&lista) == -1)
-              cout << "LISTA VACIA" << endl;
-          else
-              cout << "ELEMENTO ELIMINADO" << endl;
+           (retirarInicio(&inicio) == 0)? cout << "LA OPERACION SE REALIZO CON EXITO" << endl : cout << "NO EXISTE O LISTA VACIA" << endl;
         break;
         case 4:
           cout << "FIN DEL PROGRAMA" << endl;
@@ -75,8 +73,8 @@ void cargarDatos(int &num)
      cin >> num;  
 }
 
-//insertar inicio LIFO
-void insertarLifo(nodo **lista,nodo *nuevo)
+//insertar inicio
+void insertarInicio(nodo **lista,nodo *nuevo)
 {
       if(*lista == NULL)
          *lista = nuevo;
@@ -106,7 +104,8 @@ void mostrar(nodo *lista)
      cout << endl;
 }
 
-int retirarLifo(nodo **lista)
+//retira inicio
+int retirarInicio(nodo **lista)
 {
   if (*lista == NULL)
     return -1;

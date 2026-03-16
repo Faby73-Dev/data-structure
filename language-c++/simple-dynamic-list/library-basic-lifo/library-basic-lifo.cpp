@@ -19,8 +19,8 @@ namespace methodlifo
     	return nod;
 	}
 
-	//insertar inicio LIFO
-	void insertarLifo(nodo **lista,nodo *nuevo)
+	//insertar inicio
+	void insertarInicio(nodo **lista,nodo *nuevo)
 	{
     	if(*lista == NULL)
         	*lista = nuevo;
@@ -31,8 +31,8 @@ namespace methodlifo
       	}
 	}
 
-	//retira inicio LIFO
-	int retirarLifo(nodo **lista)
+	//retirar inicio
+	int retirarInicio(nodo **lista)
 	{
   		if (*lista == NULL)
     		return -1;

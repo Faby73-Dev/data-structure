@@ -32,7 +32,7 @@ namespace method
 	}
 
     //buscar elemento
-    int buscarProdCod(nodo *lista,int buscar)
+    int buscarElemento(nodo *lista,int buscar)
     {
         while(lista != NULL)
             if(lista->num == buscar)
@@ -43,7 +43,7 @@ namespace method
     }
 
     //eleminar segun elemento 
-    int retirarElemCod(nodo **lista,int buscar)
+    int retirarElemento(nodo **lista,int buscar)
     {
         if(*inicio != NULL)
         {
@@ -77,7 +77,7 @@ namespace method
     }
 
     //retirar elemento iguales
-    int retirarElemIgualCod(nodo **lista,int buscar)
+    int retirarElementosIguales(nodo **lista,int buscar)
     {
         int bandera = -1;
         if(*inicio != NULL)
@@ -113,5 +113,21 @@ namespace method
             return 0;
         else
             return -1;
+    }
+
+    //insertar final
+    void insertarFinal(nodo **lista,nodo *nuevo)
+    {
+        if(*lista == NULL)
+            *lista = nuevo;
+        else
+        {
+            nodo *aux = *lista;
+            while(aux->sgte != NULL)
+            {
+              aux = aux->sgte;
+            }
+            aux->sgte = *nuevo;
+        }
     }
 }

@@ -8,7 +8,6 @@ namespace method
 	//mostrar lista 
 	void mostrar(nodo *lista)
 	{
-     	int indice = 0;
      	if(lista == NULL)
          	cout << "LISTA VACIA" << endl;
      	else
@@ -17,7 +16,6 @@ namespace method
         	while(lista != NULL)
             {
                 cout << " " << lista->num << " "; 
-                indice++;
                 lista = lista->sgte;
             }
         }
